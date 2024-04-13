@@ -1,0 +1,15 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="cart-cantainer col-11 offset-1">
+<% for(cartdata of data){ %>
+    <a href="/product/<%= cartdata.product._id %>">
+    <div class="card " style="width: 14rem ">
+        <img src="<%= cartdata.product.imgUrl.url %>" class="p-img card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><%=cartdata.product.title  %></p>
+          <p class="card-text"><%= cartdata.product.price  %></p>
+          <p class="fav"><i class="fa-regular fa-heart"></i></p>
+        </div>
+      </div>
+    </a>
+ <% } %>
+</div>

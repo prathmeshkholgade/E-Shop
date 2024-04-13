@@ -1,0 +1,25 @@
+<% layout('/layouts/boilerplate') -%>
+<div class="show-cantainer">
+  <div class="show-box">
+    <div class="pro-img">
+      <img class="show-img" src="<%= product.imgUrl.url %>" alt="" />
+    </div>
+    <div class="pro-info">
+      <p><%= product.owner.username %></p>
+      <h3><%= product.title %></h3>
+      <p><%= product.description %></p>
+      <p>Price : <%= product.price %></p>
+     <a href="addtocart/<%=product._id %>"><p class="btn btn-info">Add To Cart</p></a> 
+      <% if(currUser && currUser._id.equals(product.owner._id)) { %>
+      <div class="btns">
+        <form method="get" action="/product/edit/<%= product._id%>">
+          <button class="btn btn-secondary">Edit</button>
+        </form>
+        <form method="post" action="/product/<%= product._id %>?_method=DELETE">
+          <button class="btn btn-danger">Delete</button>
+        </form>
+      </div>
+      <% } %>
+    </div>
+  </div>
+</div>

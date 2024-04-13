@@ -1,0 +1,55 @@
+<% layout('/layouts/boilerplate') -%>
+
+<form
+  method="post"
+  action="/product/<%= product._id %>?_method=PUT"
+  class="col-6 offset-3 add"
+  enctype="multipart/form-data"
+>
+  <h3>Edit Product information</h3>
+  <div class="mb-3">
+    <label for="title">Title</label>
+    <input
+      type="text"
+      value="<%= product.title %>"
+      name="product[title]"
+      id="title"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="description">Description</label>
+    <input
+      type="text"
+      value="<%= product.description %>"
+      name="product[description]"
+      id="ImgUrl"
+      class="form-control"
+    />
+  </div>
+  <!-- <div>
+    <img src="<%= product.imgUrl.url %>" alt="">
+  </div> -->
+  <div class="mb-3">
+    <label for="ImgUrl">Upload New Image</label>
+    <input
+      type="file"
+      id="imgUrl"
+      name="product[imgUrl]"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="price">Price</label>
+    <input
+      type="text"
+      value="<%= product.price %>"
+      id="price"
+      name="product[price]"
+      class="form-control"
+    />
+  </div>
+  <div class="mb-3">
+    <button class="btn btn-primary">Edit</button>
+  </div>
+</form>

@@ -1,0 +1,24 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="box-cantainer">
+    <div class="text">
+        <h2>Get the best product at your home</h2>
+    </div>
+    <div class="box-image">
+    </div>
+</div>
+
+<div class="pro-cantainer">
+<% for(product of data) {  %>
+  <a href="/product/<%= product._id %>">
+    <div class="card" style="width: 18rem;">
+        <img src="<%= product.imgUrl.url %>" class="p-img card-img-top" alt="...">
+        <div class="card-body">
+          <p class="card-text"><%= product.title %></p>
+          <p class="card-text"><%= product.price %></p>
+          <p class="fav"><i class="fa-regular fa-heart"></i></p>
+        </div>
+      </div>
+    </a>
+<% } %>
+</div>
